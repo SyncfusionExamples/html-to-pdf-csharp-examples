@@ -4,18 +4,18 @@ The Syncfusion [HTML to PDF converter](https://www.syncfusion.com/document-proce
 
 Platform name | Description
 --- | ---
-[ASP.NET Core](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/tree/EJDOTNETCORE-4218-A/ASP.NET%20Core) | Convert HTML or web pages to PDF document in ASP.NET application.
-[ASP.NET MVC](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/tree/EJDOTNETCORE-4218-A/ASP.NET%20MVC) | Convert HTML or web pages to PDF document in ASP.NET MVC application.
-[AWS](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/tree/EJDOTNETCORE-4218-A/AWS) | Convert HTML or web pages to PDF document in AWS application. 
-[Azure App Service on Linux](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/tree/EJDOTNETCORE-4218-A/Azure/AzureAppLinux_CoreSample) | Convert HTML or web pages to PDF document in Azure App Service on Linux. 
-[Azure App Service on Linux with Docker](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/tree/EJDOTNETCORE-4218-A/Azure/BlinkLinuxDockerAzureSample) | Convert HTML or web pages to PDF document in Azure App Service on Linux with Docker. 
-[Azure App Function on Linux](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/tree/EJDOTNETCORE-4218-A/Azure/HtmlToPdfBlinkAzureFunction) | Convert HTML or web pages to PDF document in Azure App Function on Linux.
-[Blazor](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/tree/EJDOTNETCORE-4218-A/Blazor) | Convert HTML or web pages to PDF document in Blazor application.
-[Docker](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/tree/EJDOTNETCORE-4218-A/Docker) | Convert HTML or web pages to PDF document in a Linux [Docker](https://www.docker.com/why-docker/) container.
-[Linux](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/tree/EJDOTNETCORE-4218-A/Linux) | Convert HTML or web pages to PDF document in Linux.
-[Mac](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/tree/EJDOTNETCORE-4218-A/Mac) | Convert HTML or web pages to PDF document in Mac. 
-[WPF](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/tree/EJDOTNETCORE-4218-A/WPF) | Convert HTML or web pages to PDF document in WPF application.
-[Windows Forms](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/tree/EJDOTNETCORE-4218-A/Windows%20Forms) | Convert HTML or web pages to PDF document in Windows Forms application.
+[ASP.NET Core](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/blob/master/ASP.NET%20Core) | Convert HTML or web pages to PDF document in ASP.NET application.
+[ASP.NET MVC](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/blob/master/ASP.NET%20MVC) | Convert HTML or web pages to PDF document in ASP.NET MVC application.
+[AWS](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/blob/master/AWS) | Convert HTML or web pages to PDF document in AWS application. 
+[Azure App Service on Linux](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/blob/master/Azure/AzureAppLinux_CoreSample) | Convert HTML or web pages to PDF document in Azure App Service on Linux. 
+[Azure App Service on Linux with Docker](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/blob/master/Azure/BlinkLinuxDockerAzureSample) | Convert HTML or web pages to PDF document in Azure App Service on Linux with Docker. 
+[Azure App Function on Linux](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/blob/master/Azure/HtmlToPdfBlinkAzureFunction) | Convert HTML or web pages to PDF document in Azure App Function on Linux.
+[Blazor](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/blob/master/Blazor) | Convert HTML or web pages to PDF document in Blazor application.
+[Docker](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/blob/master/Docker) | Convert HTML or web pages to PDF document in a Linux [Docker](https://www.docker.com/why-docker/) container.
+[Linux](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/blob/master/Linux) | Convert HTML or web pages to PDF document in Linux.
+[Mac](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/blob/master/Mac) | Convert HTML or web pages to PDF document in Mac. 
+[WPF](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/blob/master/WPF) | Convert HTML or web pages to PDF document in WPF application.
+[Windows Forms](https://github.com/SyncfusionExamples/html-to-pdf-csharp-examples/blob/master/Windows%20Forms) | Convert HTML or web pages to PDF document in Windows Forms application.
 
 # How to run the examples
 * Download this project to a location in your disk. 
