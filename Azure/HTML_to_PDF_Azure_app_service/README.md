@@ -71,8 +71,8 @@ There are two ways to install the dependency packages to Azure server,
         {
             Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Development");
              //Install the dependencies packages for HTML to PDF conversion in Linux
-   string shellFilePath = System.IO.Path.Combine(env.ContentRootPath, "dependenciesInstall.sh");
-   InstallDependecies(shellFilePath);
+            string shellFilePath = System.IO.Path.Combine(env.ContentRootPath, "dependenciesInstall.sh");
+            InstallDependecies(shellFilePath);
             //Initialize HTML to PDF converter 
             HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
             BlinkConverterSettings settings = new BlinkConverterSettings();
