@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "HTML_to_PDF_Azure_functions": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7196",
+      "launchBrowser": false
+    }
+  }
+}
