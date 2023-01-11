@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HTML_to_PDF_Lambda_Docker_Container", "HTML_to_PDF_Lambda_Docker_Container\HTML_to_PDF_Lambda_Docker_Container.csproj", "{7D79091B-90DD-4BDB-B74E-9EDBC0383810}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HTML_to_PDF_Lambda_Docker_Container.Tests", "HTML_to_PDF_Lambda_Docker_Container.Tests\HTML_to_PDF_Lambda_Docker_Container.Tests.csproj", "{B7558A0F-032E-4CDE-992A-8014CD95F177}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D79091B-90DD-4BDB-B74E-9EDBC0383810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D79091B-90DD-4BDB-B74E-9EDBC0383810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D79091B-90DD-4BDB-B74E-9EDBC0383810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D79091B-90DD-4BDB-B74E-9EDBC0383810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7558A0F-032E-4CDE-992A-8014CD95F177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7558A0F-032E-4CDE-992A-8014CD95F177}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7558A0F-032E-4CDE-992A-8014CD95F177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7558A0F-032E-4CDE-992A-8014CD95F177}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16FC8063-E775-4DED-882E-7082D0A1C1BC}
+	EndGlobalSection
+EndGlobal

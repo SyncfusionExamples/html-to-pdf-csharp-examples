@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML_to_PDF_Azure_app_service_docker", "HTML_to_PDF_Azure_app_service_docker\HTML_to_PDF_Azure_app_service_docker.csproj", "{34B9751E-3220-407E-9335-603DC374999B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34B9751E-3220-407E-9335-603DC374999B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34B9751E-3220-407E-9335-603DC374999B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34B9751E-3220-407E-9335-603DC374999B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34B9751E-3220-407E-9335-603DC374999B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E422E90C-76C3-48D4-9F42-3F962F59EDE7}
+	EndGlobalSection
+EndGlobal
