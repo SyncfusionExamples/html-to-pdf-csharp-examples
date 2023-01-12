@@ -1,6 +1,6 @@
 # Convert HTML to PDF file in Azure App Service Linux with docker using C#
 
-The Syncfusion [HTML to PDF converter](https://www.syncfusion.com/document-processing/pdf-framework/net/html-to-pdf) is a .NET library for converting webpages, SVG, MHTML, and HTML to PDF using C# in Azure App Service on Linux, Azure app service using the Linux [docker](https://www.docker.com/why-docker) container and Azure Function Application Linux.
+The Syncfusion [HTML to PDF converter](https://www.syncfusion.com/document-processing/pdf-framework/net/html-to-pdf) is a .NET library for converting webpages, SVG, MHTML, and HTML to PDF using C# in Azure App Service on Linux, Azure app service using the Linux [Docker](https://www.docker.com/why-docker) container and Azure Function Application Linux.
 
 ## Steps to convert HTML to PDF in Azure app service using Blink with Linux docker container
 
@@ -10,7 +10,8 @@ The Syncfusion [HTML to PDF converter](https://www.syncfusion.com/document-proce
 2. Choose your project's target framework, select Configure for HTTPS and Enable Docker.
     <img src="HTML_to_PDF_Azure_app_service_docker/HTML_Conversion_Images/DockerStep2.png" alt="Convert HTMLToPDF Azure Docker Step2" width="100%" Height="Auto"/>
 
-3. Install the [Syncfusion.HtmlToPdfConverter.Net.Linux](https://www.nuget.org/packages/Syncfusion.HtmlToPdfConverter.Net.Linux/) NuGet package as a reference to your .NET Core application [NuGet.org](https://www.nuget.org/).
+3. Install the [Syncfusion.HtmlToPdfConverter.Net.Linux](https://www.nuget.org/packages/Syncfusion.HtmlToPdfConverter.Net.Linux/) NuGet packages as a reference to your .NET Core application [NuGet.org](https://www.nuget.org/).
+
     <img src="HTML_to_PDF_Azure_app_service_docker/HTML_Conversion_Images/DockerStep3.png" alt="Convert HTMLToPDF Azure Docker Step3" width="100%" Height="Auto"/>
 
 4. Include the following commands in the [Dockerfile](HTML_to_PDF_Azure_app_service_docker/Dockerfile) to install the dependent packages in the docker container.
@@ -54,7 +55,7 @@ The Syncfusion [HTML to PDF converter](https://www.syncfusion.com/document-proce
 
    ```
 
-7. Add a new action method ExportToPDF in [HomeController.cs](HTML_to_PDF_Azure_app_service_docker/Controllers\HomeController.cs) file and include the below code snippet to convert HTML to PDF file and download it  
+7. Add a new action method ExportToPDF in [HomeController.cs](HTML_to_PDF_Azure_app_service_docker/Controllers\HomeController.cs) file and include the below code example to convert HTML to PDF file and download it  
 
    ```csharp
 

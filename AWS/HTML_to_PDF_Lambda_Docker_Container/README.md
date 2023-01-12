@@ -5,13 +5,13 @@
 Step 1: Create a new AWS Lambda project with Tests as follows.
 <img src="HTML_to_PDF_Lambda_Docker_Container/htmlconversion_images/awslambda1.png" alt="Convert HTMLToPDF AWS Step11" width="100%" Height="Auto"/>
 
-Step 2: Create a project name and select the location.
+Step 2: Set a project name and select the location.
 <img src="HTML_to_PDF_Lambda_Docker_Container/htmlconversion_images/awslambda2.png" alt="Convert HTMLToPDF AWS Step11" width="100%" Height="Auto"/>
 
 Step 3: Select Blueprint as .NET 6 (Container Image) Function and click Finish.
 <img src="HTML_to_PDF_Lambda_Docker_Container/htmlconversion_images/awslambda3.png" alt="Convert HTMLToPDF AWS Step11" width="100%" Height="Auto"/>
 
-Step 4: Install the [Syncfusion.HtmlToPdfConverter.Net.Aws](https://www.nuget.org/packages/Syncfusion.HtmlToPdfConverter.Net.Aws/) and [AWSSDK.Lambda](https://www.nuget.org/packages/AWSSDK.Lambda) NuGet package as a reference to your AWS lambda project from [NuGet.org](https://www.nuget.org/).
+Step 4: Install the [Syncfusion.HtmlToPdfConverter.Net.Aws](https://www.nuget.org/packages/Syncfusion.HtmlToPdfConverter.Net.Aws/) and [AWSSDK.Lambda](https://www.nuget.org/packages/AWSSDK.Lambda) NuGet packages as a reference to your AWS lambda project from [NuGet.org](https://www.nuget.org/).
 <img src="HTML_to_PDF_Lambda_Docker_Container/htmlconversion_images/awslambda4.png" alt="Convert HTMLToPDF AWS Step11" width="100%" Height="Auto"/>
 
 Step 5: Using the following namespaces in the [Function.cs](HTML_to_PDF_Lambda_Docker_Container/Function.cs) file.
@@ -45,15 +45,12 @@ public string FunctionHandler(string input, ILambdaContext context)
  
    //Save the document into a stream.
    MemoryStream memoryStream = new MemoryStream();
- 
    //Save and close the PDFDocument.
    document.Save(memoryStream);
    document.Close(true);
- 
    string base64 = Convert.ToBase64String(memoryStream.ToArray());
    memoryStream.Close();
    memoryStream.Dispose();
- 
    return base64;
 }
 
@@ -69,7 +66,7 @@ public static string PathToFile()
 
 ```
 
-Step 7: Create a new folder as Helper and add a class as [AWSHelper.cs](HTML_to_PDF_Lambda_Docker_Container/Helper/AWSHelper.cs) file. Add the following namespaces and code samples in the AWSHelper class to invoke the published AWS Lambda function using the function name and access keys.
+Step 7: Create a new folder name as Helper and add a new class as [AWSHelper.cs](HTML_to_PDF_Lambda_Docker_Container/Helper/AWSHelper.cs) file. Add the following namespaces and code samples in the AWSHelper class to invoke the published AWS Lambda function using the function name and access keys.
 
 ```csharp
 
