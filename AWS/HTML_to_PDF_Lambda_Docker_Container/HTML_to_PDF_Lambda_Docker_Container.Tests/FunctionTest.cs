@@ -1,7 +1,7 @@
 using Xunit;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.TestUtilities;
-using AWSLambdaDockerContainer.Helper;
+using HTML_to_PDF_Lambda_Docker_Container.Helper;
 
 namespace HTML_to_PDF_Lambda_Docker_Container.Tests;
 

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AWSLambdaDockerContainer.Helper
+namespace HTML_to_PDF_Lambda_Docker_Container.Helper
 {
     public class AWSHelper
     {
