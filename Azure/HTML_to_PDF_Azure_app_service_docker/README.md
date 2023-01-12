@@ -11,7 +11,7 @@ The Syncfusion [HTML to PDF converter](https://www.syncfusion.com/document-proce
     <img src="HTML_to_PDF_Azure_app_service_docker/HTML_Conversion_Images/DockerStep2.png" alt="Convert HTMLToPDF Azure Docker Step2" width="100%" Height="Auto"/>
 
 3. Install the [Syncfusion.HtmlToPdfConverter.Net.Linux](https://www.nuget.org/packages/Syncfusion.HtmlToPdfConverter.Net.Linux/) NuGet packages as a reference to your .NET Core application [NuGet.org](https://www.nuget.org/).
-<img src="HTML_to_PDF_Azure_app_service_docker/HTML_Conversion_Images/DockerStep3.png" alt="Convert HTMLToPDF Azure Docker Step4" width="100%" Height="Auto"/>
+    <img src="HTML_to_PDF_Azure_app_service_docker/HTML_Conversion_Images/DockerStep3.png" alt="Convert HTMLToPDF Azure Docker Step4" width="100%" Height="Auto"/>
 
 4. Include the following commands in the [Dockerfile](HTML_to_PDF_Azure_app_service_docker/Dockerfile) to install the dependent packages in the docker container.
 
