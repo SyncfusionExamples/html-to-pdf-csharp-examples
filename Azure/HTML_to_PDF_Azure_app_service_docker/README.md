@@ -11,8 +11,7 @@ The Syncfusion [HTML to PDF converter](https://www.syncfusion.com/document-proce
     <img src="HTML_to_PDF_Azure_app_service_docker/HTML_Conversion_Images/DockerStep2.png" alt="Convert HTMLToPDF Azure Docker Step2" width="100%" Height="Auto"/>
 
 3. Install the [Syncfusion.HtmlToPdfConverter.Net.Linux](https://www.nuget.org/packages/Syncfusion.HtmlToPdfConverter.Net.Linux/) NuGet packages as a reference to your .NET Core application [NuGet.org](https://www.nuget.org/).
-
-    <img src="HTML_to_PDF_Azure_app_service_docker/HTML_Conversion_Images/DockerStep3.png" alt="Convert HTMLToPDF Azure Docker Step3" width="100%" Height="Auto"/>
+<img src="HTML_to_PDF_Azure_app_service_docker/HTML_Conversion_Images/DockerStep3.png" alt="Convert HTMLToPDF Azure Docker Step4" width="100%" Height="Auto"/>
 
 4. Include the following commands in the [Dockerfile](HTML_to_PDF_Azure_app_service_docker/Dockerfile) to install the dependent packages in the docker container.
 
@@ -55,7 +54,7 @@ The Syncfusion [HTML to PDF converter](https://www.syncfusion.com/document-proce
 
    ```
 
-7. Add a new action method ExportToPDF in [HomeController.cs](HTML_to_PDF_Azure_app_service_docker/Controllers\HomeController.cs) file and include the below code example to convert HTML to PDF file and download it  
+7. Add a new action method ExportToPDF in [HomeController.cs](HTML_to_PDF_Azure_app_service_docker/Controllers\HomeController.cs) file and include the below code example to convert HTML to PDF file and download it.  
 
    ```csharp
 
@@ -101,7 +100,8 @@ The Syncfusion [HTML to PDF converter](https://www.syncfusion.com/document-proce
     <img src="HTML_to_PDF_Azure_app_service_docker/HTML_Conversion_Images/AzureDocker6.png" alt="Convert HTMLToPDF Azure Docker Step8" width="100%" Height="Auto"/>
 
 5. After successful deployment, it will open the Azure website in the browser.
-    <img src="HTML_to_PDF_Azure_app_service_docker/HTML_Conversion_Images/AzureDocker7.png" alt="Convert HTMLToPDF Azure Docker Step9" width="100%" Height="Auto"/>
+    <img src="HTML_to_PDF_Azure_app_service_docker/HTML_Conversion_Images/DockerStep6.png" alt="Convert HTMLToPDF Azure Docker Step6" width="100%" Height="Auto"/>
+
 
 6. Click the button to convert Syncfusion webpage to a PDF document. You will get the PDF document as follows.
     <img src="HTML_to_PDF_Azure_app_service_docker/HTML_Conversion_Images/htmltopdfoutput.png" alt="Convert HTMLToPDF Azure Docker Output" width="100%" Height="Auto"/> 
