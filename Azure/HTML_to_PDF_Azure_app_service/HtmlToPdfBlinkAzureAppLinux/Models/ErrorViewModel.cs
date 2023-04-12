@@ -1,4 +1,4 @@
-namespace HTML_to_PDF_Azure_app_service.Models
+namespace HtmlToPdfBlinkAzureAppLinux.Models
 {
     public class ErrorViewModel
     {

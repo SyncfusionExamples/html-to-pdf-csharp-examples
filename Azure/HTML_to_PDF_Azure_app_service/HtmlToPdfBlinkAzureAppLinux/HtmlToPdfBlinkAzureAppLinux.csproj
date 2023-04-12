@@ -7,10 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syncfusion.HtmlToPdfConverter.Net.Linux" Version="20.3.0.58" />
+    <PackageReference Include="Syncfusion.HtmlToPdfConverter.Net.Linux" Version="20.4.0.53" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Data\HtmlSample.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="dependenciesInstall.sh">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
