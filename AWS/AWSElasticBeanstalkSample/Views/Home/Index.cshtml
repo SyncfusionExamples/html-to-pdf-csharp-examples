@@ -1,0 +1,14 @@
+﻿@{
+    Html.BeginForm("BlinkToPDF", "Home", FormMethod.Get);
+    {
+        <div>
+            <input type="submit" value="HTML To PDF" style="width:150px;height:27px" />
+            <br />
+            <div class="text-danger">
+                @ViewBag.Message
+            </div>
+        </div>
+    }
+    Html.EndForm();
+}
+
