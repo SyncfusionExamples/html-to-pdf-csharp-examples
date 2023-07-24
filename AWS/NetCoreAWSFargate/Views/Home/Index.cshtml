@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    Html.BeginForm("BlinkToPDF", "Home", FormMethod.Get);
+    {
+        <div>
+            <input type="submit" value="HTML To PDF" style="width:150px;height:27px" />
+            <br />
+            <div class="text-danger">
+                @ViewBag.Message
+            </div>
+        </div>
+    }
+    Html.EndForm();
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
