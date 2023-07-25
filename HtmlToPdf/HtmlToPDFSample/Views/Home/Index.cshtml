@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    Html.BeginForm("ExportToPDF", "Home", FormMethod.Post);
+    {
+        <div>
+            <input type="submit" value="Convert HTML to PDF" style="width:250px;height:27px" />
+        </div>
+    }
+    Html.EndForm();
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
