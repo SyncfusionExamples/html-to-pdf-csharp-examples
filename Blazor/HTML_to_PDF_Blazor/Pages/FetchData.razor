@@ -4,6 +4,7 @@
 @inject WeatherForecastService ForecastService
 @inject ExportService exportService
 @inject Microsoft.JSInterop.IJSRuntime JS
+@inject NavigationManager NavigationManager
 @using  System.IO;
 <h1>Weather forecast</h1>
 
@@ -11,13 +12,25 @@
 
 <button class="btn btn-primary" @onclick="@ExportToPdf">Export to PDF</button>
 
+@code {
+    private string currentUrl;
+    /// <summary>
+    /// Get the current URL
+    /// </summary>
+    protected override void OnInitialized()
+    {
+        currentUrl = NavigationManager.Uri;
+    }
+}
 @functions
 {
-
+    /// <summary>
+    /// Create and download the PDF document
+    /// </summary>
     protected async Task ExportToPdf()
     {
         ExportService exportService = new ExportService();
-        using (MemoryStream excelStream = exportService.CreatePdf())
+        using (MemoryStream excelStream = exportService.CreatePdf(currentUrl))
         {
             await JS.SaveAs("HTML-to-PDF.pdf", excelStream.ToArray());
         }
