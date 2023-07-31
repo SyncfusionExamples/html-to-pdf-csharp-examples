@@ -27,17 +27,12 @@ The Syncfusion HTML to PDF converter is a .NET library used to convert HTML or w
 4. Add the following code to convert HTML to PDF document in [ExportService](HTML_to_PDF_Blazor/Data/ExportService.cs) class.
 
    ```csharp
-   public MemoryStream CreatePdf()
+   public MemoryStream CreatePdf(string url)
    {
       //Initialize HTML to PDF converter.
-      HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
-      BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
-      //Set Blink viewport size.
-      blinkConverterSettings.ViewPortSize = new Syncfusion.Drawing.Size(1280, 0);
-      //Assign Blink converter settings to HTML converter.
-      htmlConverter.ConverterSettings = blinkConverterSettings;
+      HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();      
       //Convert URL to PDF document.
-      PdfDocument document = htmlConverter.Convert("https://www.syncfusion.com");
+      PdfDocument document = htmlConverter.Convert(url);
       //Create memory stream.
       MemoryStream stream = new MemoryStream();
       //Save the document to memory stream.
@@ -49,6 +44,9 @@ The Syncfusion HTML to PDF converter is a .NET library used to convert HTML or w
 5. Register your service in the ConfigureServices method available in the Startup.cs class as follows.
 
    ```csharp
+   /// <summary>
+   /// Register your ExportService 
+   /// </summary>
    public void ConfigureServices(IServiceCollection services)
    {
       services.AddRazorPages();
@@ -63,6 +61,7 @@ The Syncfusion HTML to PDF converter is a .NET library used to convert HTML or w
    ```csharp
    @inject ExportService exportService
    @inject Microsoft.JSInterop.IJSRuntime JS
+   @inject NavigationManager NavigationManager
    @using  System.IO;
    ```
 
@@ -75,13 +74,25 @@ The Syncfusion HTML to PDF converter is a .NET library used to convert HTML or w
 8. Add the ExportToPdf method in FetchData.razor page to call the export service.
 
    ```csharp
+   @code {
+    private string currentUrl;
+   /// <summary>
+   /// Get the current URL
+   /// </summary>
+   protected override void OnInitialized()
+   {
+      currentUrl = NavigationManager.Uri;
+   }
+   }
    @functions
    {
- 
+      /// <summary>
+      /// Create and download the PDF document
+      /// </summary>
       protected async Task ExportToPdf()
       {
          ExportService exportService = new ExportService();
-         using (MemoryStream excelStream = exportService.CreatePdf())
+         using (MemoryStream excelStream = exportService.CreatePdf(currentUrl))
          {
             await JS.SaveAs("HTML-to-PDF.pdf", excelStream.ToArray());
          }
