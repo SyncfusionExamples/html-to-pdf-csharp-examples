@@ -30,17 +30,17 @@ namespace HTML_to_PDF_Azure_Functions
         {
             MemoryStream ms = new MemoryStream();
             try {
-                //Initialize HTML to PDF converter. 
+                //Initialize HTML to PDF converter.
                 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter(HtmlRenderingEngine.WebKit);
                 WebKitConverterSettings settings = new WebKitConverterSettings();
                 //Set WebKit path.
-                settings.WebKitPath = Path.Combine(context.FunctionAppDirectory, "bin/runtimes/win-x64/native");                
+                settings.WebKitPath = Path.Combine(context.FunctionAppDirectory, "bin/runtimes/win-x64/native");
 				//Assign WebKit settings to HTML converter.
                 htmlConverter.ConverterSettings = settings;
                 //Convert URL to PDF.
                 PdfDocument document = htmlConverter.Convert("https://www.google.com");
 
-                //Save and close the PDF document.  
+                //Save and close the PDF document.
                 document.Save(ms);
                 document.Close();
                 ms.Position = 0;
