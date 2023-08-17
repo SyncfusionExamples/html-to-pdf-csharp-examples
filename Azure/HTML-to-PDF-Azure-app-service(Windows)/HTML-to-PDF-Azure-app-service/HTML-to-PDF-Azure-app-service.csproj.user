@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ActiveDebugProfile>https</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>D:\syncfusion\HTML-to-PDF-Azure-app-service\HTML-to-PDF-Azure-app-service\Properties\PublishProfiles\HTML-to-PDF-Azure-app-service20230811155443 - Web Deploy1.pubxml</NameOfLastUsedPublishProfile>
+  </PropertyGroup>
+</Project>
