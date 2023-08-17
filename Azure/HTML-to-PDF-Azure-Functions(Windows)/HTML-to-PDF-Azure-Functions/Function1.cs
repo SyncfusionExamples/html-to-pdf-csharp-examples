@@ -34,7 +34,8 @@ namespace HTML_to_PDF_Azure_Functions
                 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter(HtmlRenderingEngine.WebKit);
                 WebKitConverterSettings settings = new WebKitConverterSettings();
                 //Set WebKit path.
-                settings.WebKitPath = Path.Combine(context.FunctionAppDirectory, "bin/runtimes/win-x64/native");                //Assign WebKit settings to HTML converter
+                settings.WebKitPath = Path.Combine(context.FunctionAppDirectory, "bin/runtimes/win-x64/native");                
+				//Assign WebKit settings to HTML converter.
                 htmlConverter.ConverterSettings = settings;
                 //Convert URL to PDF.
                 PdfDocument document = htmlConverter.Convert("https://www.google.com");
