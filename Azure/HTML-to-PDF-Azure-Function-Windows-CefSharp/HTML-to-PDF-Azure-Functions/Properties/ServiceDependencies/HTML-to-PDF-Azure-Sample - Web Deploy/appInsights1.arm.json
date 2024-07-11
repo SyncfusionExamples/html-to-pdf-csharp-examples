@@ -4,7 +4,7 @@
   "parameters": {
     "resourceGroupName": {
       "type": "string",
-      "defaultValue": "HtmlToPdfAzureFunction",
+      "defaultValue": "HTMLToPDFAzureFunction",
       "metadata": {
         "_parameterType": "resourceGroup",
         "description": "Name of the resource group for the resource. It is recommended to put resources under same resource group for better tracking."
@@ -36,7 +36,7 @@
     },
     {
       "type": "Microsoft.Resources/deployments",
-      "name": "[concat(parameters('resourceGroupName'), 'Deployment', uniqueString(concat('HtmlToPdfAppContainer', subscription().subscriptionId)))]",
+      "name": "[concat(parameters('resourceGroupName'), 'Deployment', uniqueString(concat('HtmltoPDFAzureSample', subscription().subscriptionId)))]",
       "resourceGroup": "[parameters('resourceGroupName')]",
       "apiVersion": "2019-10-01",
       "dependsOn": [
@@ -50,7 +50,7 @@
           "resources": [
             {
               "kind": "web",
-              "name": "HtmlToPdfAppContainer",
+              "name": "HtmltoPDFAzureSample",
               "type": "microsoft.insights/components",
               "location": "[parameters('resourceLocation')]",
               "properties": {},

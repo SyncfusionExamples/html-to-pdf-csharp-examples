@@ -1,40 +1,36 @@
-using System;
-using System.IO;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using Syncfusion.HtmlConverter;
-using Syncfusion.Pdf;
-using System.Net.Http;
-using System.Net;
-using System.Net.Http.Headers;
 using Syncfusion.Pdf.Graphics;
-using ExecutionContext = Microsoft.Azure.WebJobs.ExecutionContext;
+using Syncfusion.Pdf;
 
 namespace HTML_to_PDF_Azure_Functions
 {
-    public static class Function1
+    public class Function1
     {
-        [FunctionName("Function1")]
-        public static async Task<HttpResponseMessage> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
-            ILogger log)
+        private readonly ILogger<Function1> _logger;
+
+        public Function1(ILogger<Function1> logger)
         {
+            _logger = logger;
+        }
+
+        [Function("Function1")]
+        public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req)
+        {
+
             MemoryStream ms = new MemoryStream();
-            string logs = string.Empty;
             try
             {
                 //Initialize HTML to PDF converter.
                 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter(HtmlRenderingEngine.Cef);
                 CefConverterSettings settings = new CefConverterSettings();
-                //logs += settings.
                 //Assign WebKit settings to HTML converter.
                 htmlConverter.ConverterSettings = settings;
                 //Convert URL to PDF.
-                PdfDocument document = htmlConverter.Convert("https://www.google.com");
+                PdfDocument document = htmlConverter.Convert("https://www.google.com/");
                 //Save and close the PDF document.
                 document.Save(ms);
                 document.Close();
@@ -63,14 +59,7 @@ namespace HTML_to_PDF_Azure_Functions
                 document.Close(true);
                 ms.Position = 0;
             }
-            HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
-            response.Content = new ByteArrayContent(ms.ToArray());
-            response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
-            {
-                FileName = "Sample.pdf"
-            };
-            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/pdf");
-            return response;
+            return new FileStreamResult(ms, "application/pdf");
         }
     }
 }
