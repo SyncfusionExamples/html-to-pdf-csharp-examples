@@ -2,7 +2,7 @@
   "profiles": {
     "HTML_to_PDF_Azure_Functions": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7061",
+      "commandLineArgs": "--port 7157",
       "launchBrowser": false
     }
   }
