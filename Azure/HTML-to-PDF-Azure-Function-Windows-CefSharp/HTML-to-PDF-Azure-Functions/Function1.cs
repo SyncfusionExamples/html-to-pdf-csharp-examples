@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using Syncfusion.HtmlConverter;
-using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
 
 namespace HTML_to_PDF_Azure_Functions
 {
