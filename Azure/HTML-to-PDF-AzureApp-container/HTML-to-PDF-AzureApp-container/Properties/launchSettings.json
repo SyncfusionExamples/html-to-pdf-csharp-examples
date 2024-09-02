@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "HTML_to_PDF_AzureApp_container": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7213"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "DockerfileRunArguments": "--init",
+      "httpPort": 31335,
+      "useSSL": false
+    }
+  }
+}
