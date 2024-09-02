@@ -1,10 +1,16 @@
-using Microsoft.AspNetCore.Http;
+using System;
+using System.IO;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using Microsoft.Azure.Functions.Worker;
 using Syncfusion.HtmlConverter;
-using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
+using Syncfusion.Pdf;
 using System.Runtime.InteropServices;
 
 namespace HTML_to_PDF_AzureApp_container
@@ -20,108 +26,55 @@ namespace HTML_to_PDF_AzureApp_container
 
         [Function("Function1")]
         public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequest req)
-
         {
-
             string blinkBinariesPath = string.Empty;
-
             MemoryStream ms = null;
 
             try
-
             {
+                // Attempt to initialize Blink binaries
+                blinkBinariesPath = SetupBlinkBinaries();
 
-                try
-
-                {
-
-                    blinkBinariesPath = SetupBlinkBinaries();
-
-                }
-
-                catch
-
-                {
-
-                    throw new Exception("BlinkBinaries initialization failed");
-
-                }
-
-                //Initialize the HTML to PDF converter with the Blink rendering engine.
-
+                // Initialize the HTML to PDF converter with the Blink rendering engine.
                 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter(HtmlRenderingEngine.Blink);
-
                 BlinkConverterSettings settings = new BlinkConverterSettings();
 
-                //Set command line arguments to run without sandbox.
-
+                // Set command line arguments to run without sandbox.
                 settings.CommandLineArguments.Add("--no-sandbox");
-
                 settings.CommandLineArguments.Add("--disable-setuid-sandbox");
-
                 settings.BlinkPath = blinkBinariesPath;
 
-                //Assign BlinkConverter settings to the HTML converter
-
+                // Assign BlinkConverter settings to the HTML converter
                 htmlConverter.ConverterSettings = settings;
 
-                //Convert URL to PDF
-
+                // Convert URL to PDF
                 PdfDocument document = htmlConverter.Convert("https://www.google.com/");
-
                 ms = new MemoryStream();
 
-                //Save and close the PDF document  
-
+                // Save and close the PDF document  
                 document.Save(ms);
-
                 document.Close();
-
             }
-
             catch (Exception ex)
-
             {
-
-                //Create a new PDF document.
-
+                // Handle any exception by creating an error PDF document
                 PdfDocument document = new PdfDocument();
-
-                //Add a page to the document.
-
                 PdfPage page = document.Pages.Add();
-
-                //Create PDF graphics for the page.
-
                 PdfGraphics graphics = page.Graphics;
-
-                //Set the standard font.
-
                 PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
 
-                //Draw the text.
-
+                // Draw the exception message in the PDF
                 graphics.DrawString(ex.Message, font, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, 0));
 
-                //Creating the stream object.
-
                 ms = new MemoryStream();
-
-                //Save the document into memory stream.
-
                 document.Save(ms);
-
-                //Close the document.
-
                 document.Close(true);
-
             }
 
             ms.Position = 0;
-
             return new FileStreamResult(ms, "application/pdf");
-
         }
+
 
         private static string SetupBlinkBinaries()
 
