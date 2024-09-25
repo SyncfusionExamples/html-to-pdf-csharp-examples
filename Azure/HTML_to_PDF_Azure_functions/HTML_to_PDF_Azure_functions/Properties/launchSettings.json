@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "HTML_to_PDF_Azure_functions": {
+    "FunctionApp_Linux_HTMLtoPDF": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7196",
+      "commandLineArgs": "--port 7233",
       "launchBrowser": false
     }
   }

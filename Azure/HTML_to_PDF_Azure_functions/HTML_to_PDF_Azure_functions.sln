@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.4.32916.344
+VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML_to_PDF_Azure_functions", "HTML_to_PDF_Azure_functions\HTML_to_PDF_Azure_functions.csproj", "{166CE94E-6280-4546-9ADD-E8BA27C62AC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML_to_PDF_Azure_functions", "HTML_to_PDF_Azure_functions\HTML_to_PDF_Azure_functions.csproj", "{B865214A-4EB5-4A78-8C5E-2DDBBADA0265}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{166CE94E-6280-4546-9ADD-E8BA27C62AC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{166CE94E-6280-4546-9ADD-E8BA27C62AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{166CE94E-6280-4546-9ADD-E8BA27C62AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{166CE94E-6280-4546-9ADD-E8BA27C62AC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B865214A-4EB5-4A78-8C5E-2DDBBADA0265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B865214A-4EB5-4A78-8C5E-2DDBBADA0265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B865214A-4EB5-4A78-8C5E-2DDBBADA0265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B865214A-4EB5-4A78-8C5E-2DDBBADA0265}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {ADB96CAC-200F-4397-B67F-5FA8234E273D}
+		SolutionGuid = {B2186101-8624-46F3-9754-46B7DCB83A52}
 	EndGlobalSection
 EndGlobal
