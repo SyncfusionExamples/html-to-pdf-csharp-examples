@@ -14,7 +14,7 @@
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.16.4" />
     <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.21.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.ApplicationInsights" Version="1.1.0" />
-    <PackageReference Include="Syncfusion.HtmlToPdfConverter.Net.Linux" Version="24.2.9" />
+    <PackageReference Include="Syncfusion.HtmlToPdfConverter.Net.Linux" Version="*" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
