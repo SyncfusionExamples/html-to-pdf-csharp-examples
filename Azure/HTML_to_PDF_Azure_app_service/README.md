@@ -1,7 +1,7 @@
 
 # Convert HTML to PDF file in Azure App Service on Linux using C#
 
-The Syncfusion HTML to PDF converter is a .NET library for converting webpages, SVG, MHTML, and HTML to PDF using C# in Azure App Service on Linux, Azure app service using the Linux [docker](https://www.docker.com/why-docker) container and Azure Function Application Linux. 
+The Syncfusion&reg; HTML to PDF converter is a .NET library for converting webpages, SVG, MHTML, and HTML to PDF using C# in Azure App Service on Linux, Azure app service using the Linux [docker](https://www.docker.com/why-docker) container and Azure Function Application Linux. 
 
 ## Steps to convert HTML to PDF in Azure App service on Linux
 
@@ -134,6 +134,6 @@ There are two ways to install the dependency packages to Azure server,
 5. After creating a profile, click the publish button.
     <img src="HTML_to_PDF_Azure_app_service/HTML_to_PDF_images/AzureNetCore11.png" alt="AzureNetCore11 image" width="100%" Height="Auto"/>
 
-   Now, the published webpage will open in the browser. Click Export to PDF button to convert Syncfusion webpage to PDF document.
+   Now, the published webpage will open in the browser. Click Export to PDF button to convert Syncfusion&reg; webpage to PDF document.
    <img src="HTML_to_PDF_Azure_app_service/HTML_to_PDF_images/htmltopdfoutput.png" alt="AzureNetCore1 image" width="100%" Height="Auto"/>
 

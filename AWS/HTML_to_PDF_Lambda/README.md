@@ -1,6 +1,6 @@
 # Convert HTML to PDF file in AWS using C#
 
-The Syncfusion [HTML to PDF converter](https://www.syncfusion.com/pdf-framework/net/html-to-pdf) is a .NET library for converting webpages, SVG, MHTML, and HTML to PDF using C# with Blink rendering engine in AWS.
+The Syncfusion&reg; [HTML to PDF converter](https://www.syncfusion.com/pdf-framework/net/html-to-pdf) is a .NET library for converting webpages, SVG, MHTML, and HTML to PDF using C# with Blink rendering engine in AWS.
 
 ## Setting up the AWS Toolkit for Visual Studio
 

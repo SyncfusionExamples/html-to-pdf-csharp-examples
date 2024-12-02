@@ -1,6 +1,6 @@
 # Convert HTML to PDF file in Azure App Service Linux with docker using C#
 
-The Syncfusion [HTML to PDF converter](https://www.syncfusion.com/document-processing/pdf-framework/net/html-to-pdf) is a .NET library for converting webpages, SVG, MHTML, and HTML to PDF using C# in Azure App Service on Linux, Azure app service using the Linux [Docker](https://www.docker.com/why-docker) container and Azure Function Application Linux.
+The Syncfusion&reg; [HTML to PDF converter](https://www.syncfusion.com/document-processing/pdf-framework/net/html-to-pdf) is a .NET library for converting webpages, SVG, MHTML, and HTML to PDF using C# in Azure App Service on Linux, Azure app service using the Linux [Docker](https://www.docker.com/why-docker) container and Azure Function Application Linux.
 
 ## Steps to convert HTML to PDF in Azure app service using Blink with Linux docker container
 
@@ -79,7 +79,7 @@ The Syncfusion [HTML to PDF converter](https://www.syncfusion.com/document-proce
 
    ```
 
-8. Build and run the sample in docker, it will pull the Linux docker image from the docker hub and run the project. Now, the webpage will open in the browser and click the button to convert the Syncfusion webpage to a PDF.
+8. Build and run the sample in docker, it will pull the Linux docker image from the docker hub and run the project. Now, the webpage will open in the browser and click the button to convert the Syncfusion&reg; webpage to a PDF.
 
     <img src="HTML_to_PDF_Azure_app_service_docker/HTML_Conversion_Images/DockerStep6.png" alt="Convert HTMLToPDF Azure Docker Step6" width="100%" Height="Auto"/>
 
@@ -104,6 +104,6 @@ The Syncfusion [HTML to PDF converter](https://www.syncfusion.com/document-proce
     <img src="HTML_to_PDF_Azure_app_service_docker/HTML_Conversion_Images/DockerStep6.png" alt="Convert HTMLToPDF Azure Docker Step6" width="100%" Height="Auto"/>
 
 
-6. Click the button to convert Syncfusion webpage to a PDF document. You will get the PDF document as follows.
+6. Click the button to convert Syncfusion&reg; webpage to a PDF document. You will get the PDF document as follows.
     <img src="HTML_to_PDF_Azure_app_service_docker/HTML_Conversion_Images/htmltopdfoutput.png" alt="Convert HTMLToPDF Azure Docker Output" width="100%" Height="Auto"/> 
 
