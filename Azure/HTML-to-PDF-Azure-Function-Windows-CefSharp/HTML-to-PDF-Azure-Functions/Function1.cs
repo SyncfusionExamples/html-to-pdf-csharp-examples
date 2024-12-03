@@ -17,39 +17,39 @@ namespace HTML_to_PDF_Azure_Functions
             _logger = logger;
         }
 
-        [Function("Function1")]
-        public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req)
-        {
 
-            MemoryStream ms = new MemoryStream();
+        [Function("Function1")]
+
+        public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequest req)
+        {
+            string blinkBinariesPath = string.Empty;
+            MemoryStream ms = null;
             try
             {
-                //Initialize HTML to PDF converter.
+
+                //Initialize the HTML to PDF converter with the Blink rendering engine.
                 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter(HtmlRenderingEngine.Cef);
-                CefConverterSettings settings = new CefConverterSettings();
-                //Assign WebKit settings to HTML converter.
-                htmlConverter.ConverterSettings = settings;
-                //Convert URL to PDF.
+                //Convert URL to PDF
                 PdfDocument document = htmlConverter.Convert("https://www.google.com/");
-                //Save and close the PDF document.
+
+                ms = new MemoryStream();
+                //Save and close the PDF document  
                 document.Save(ms);
                 document.Close();
-                ms.Position = 0;
             }
-
             catch (Exception ex)
             {
                 //Create a new PDF document.
                 PdfDocument document = new PdfDocument();
                 //Add a page to the document.
                 PdfPage page = document.Pages.Add();
+
                 //Create PDF graphics for the page.
                 PdfGraphics graphics = page.Graphics;
-
                 //Set the standard font.
-                PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 5);
+                PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
                 //Draw the text.
-                graphics.DrawString(ex.ToString(), font, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, 0));
+                graphics.DrawString(ex.Message, font, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, 0));
 
                 //Creating the stream object.
                 ms = new MemoryStream();
@@ -57,8 +57,9 @@ namespace HTML_to_PDF_Azure_Functions
                 document.Save(ms);
                 //Close the document.
                 document.Close(true);
-                ms.Position = 0;
+
             }
+            ms.Position = 0;
             return new FileStreamResult(ms, "application/pdf");
         }
     }
