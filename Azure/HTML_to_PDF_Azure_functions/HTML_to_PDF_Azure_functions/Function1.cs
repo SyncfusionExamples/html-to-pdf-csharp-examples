@@ -34,10 +34,6 @@ namespace FunctionApp_Linux_HTMLtoPDF
                 
                 //Initialize the HTML to PDF converter with the Blink rendering engine.
                 HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter(HtmlRenderingEngine.Blink);
-              
-                //Set command line arguments to run without sandbox.
-                settings.CommandLineArguments.Add("--no-sandbox");
-                settings.CommandLineArguments.Add("--disable-setuid-sandbox");
                 settings.BlinkPath = blinkBinariesPath;
                 //Assign BlinkConverter settings to the HTML converter 
                 htmlConverter.ConverterSettings = settings;

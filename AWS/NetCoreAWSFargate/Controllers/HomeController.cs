@@ -25,9 +25,6 @@ namespace NetCoreAWSFargate.Controllers
             //Initialize HTML to PDF converter.
             HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter(HtmlRenderingEngine.Blink);
             BlinkConverterSettings settings = new BlinkConverterSettings();
-            //Set command line arguments to run without the sandbox.
-            settings.CommandLineArguments.Add("--no-sandbox");
-            settings.CommandLineArguments.Add("--disable-setuid-sandbox");
             //Set Blink viewport size.
             settings.ViewPortSize = new Syncfusion.Drawing.Size(1280, 0);
             //Assign Blink settings to the HTML converter.

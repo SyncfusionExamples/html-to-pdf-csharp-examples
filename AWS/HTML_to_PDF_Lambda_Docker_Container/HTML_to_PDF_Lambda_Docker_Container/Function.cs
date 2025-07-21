@@ -25,8 +25,6 @@ public class Function
         BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
 
         blinkConverterSettings.BlinkPath = Path.GetFullPath("BlinkBinariesAws");
-        blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
-        blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
 
         blinkConverterSettings.AdditionalDelay = 3000;
 

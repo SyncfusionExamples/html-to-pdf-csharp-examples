@@ -31,9 +31,6 @@ namespace HtmlToPdfBlinkAzureAppLinux.Controllers
             //Initialize HTML to PDF converter
             HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
             BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
-            //Set command line arguments to run without sandbox.
-            blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
-            blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
             htmlConverter.ConverterSettings = blinkConverterSettings;
             PdfDocument document = htmlConverter.Convert("https://www.syncfusion.com");
             MemoryStream outputStream = new MemoryStream();

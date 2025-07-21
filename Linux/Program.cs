@@ -14,10 +14,6 @@ namespace Linux_HTML_to_PDF_Demo
 
 			BlinkConverterSettings blinkConverterSettings = new BlinkConverterSettings();
 		
-			blinkConverterSettings.CommandLineArguments.Add("--no-sandbox");
-            	
-			blinkConverterSettings.CommandLineArguments.Add("--disable-setuid-sandbox");
-
 			//Assign Blink converter settings to HTML converter
 			htmlConverter.ConverterSettings = blinkConverterSettings;
 
