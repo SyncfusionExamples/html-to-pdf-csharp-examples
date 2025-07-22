@@ -41,9 +41,6 @@ namespace HTML_to_PDF_docker.Controllers
             //Initialize HTML to PDF converter. 
             HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
             BlinkConverterSettings settings = new BlinkConverterSettings();
-            //Set command line arguments to run without sandbox.
-            settings.CommandLineArguments.Add("--no-sandbox");
-            settings.CommandLineArguments.Add("--disable-setuid-sandbox");
             //Set Blink viewport size.
             settings.ViewPortSize = new Syncfusion.Drawing.Size(1280, 0);
             //Assign Blink settings to HTML converter.

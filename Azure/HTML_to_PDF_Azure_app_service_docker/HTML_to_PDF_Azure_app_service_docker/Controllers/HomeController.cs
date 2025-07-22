@@ -36,9 +36,6 @@ namespace HTML_to_PDF_Azure_app_service_docker.Controllers
             //Initialize HTML to PDF converter. 
             HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
             BlinkConverterSettings settings = new BlinkConverterSettings();
-            //Set command line arguments to run without the sandbox.
-            settings.CommandLineArguments.Add("--no-sandbox");
-            settings.CommandLineArguments.Add("--disable-setuid-sandbox");
             //Assign Blink settings to the HTML converter.
             htmlConverter.ConverterSettings = settings;
             //Convert URL to PDF.
