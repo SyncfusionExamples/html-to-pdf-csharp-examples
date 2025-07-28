@@ -17,11 +17,14 @@
     <PackageReference Include="Syncfusion.HtmlToPdfConverter.Net.Linux" Version="*" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="dependenciesInstall.sh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="host.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="local.settings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
   </ItemGroup>
