@@ -1,6 +1,6 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 RUN apt-get update && \
 apt-get install -yq --no-install-recommends \ 
 libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 \ 
@@ -14,7 +14,7 @@ EXPOSE 80
 EXPOSE 443
 
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY ["HTML_to_PDF_Azure_app_service_docker/HTML_to_PDF_Azure_app_service_docker.csproj", "HTML_to_PDF_Azure_app_service_docker/"]
 RUN dotnet restore "HTML_to_PDF_Azure_app_service_docker/HTML_to_PDF_Azure_app_service_docker.csproj"
