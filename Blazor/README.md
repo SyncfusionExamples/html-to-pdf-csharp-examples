@@ -6,118 +6,138 @@ The Syncfusion&reg; HTML to PDF converter is a .NET library used to convert HTML
 
 ## Steps to convert HTML to PDF in Blazor application
 
-1. Create a new C# Blazor Server application project. Select Blazor App from the template and click the Next button.
-   <img src="HTML_to_PDF_Blazor/htmlconversion_images/blazor_step1.png" alt="Blazor_step1" width="100%" Height="Auto"/>
+1. Create a new C# Blazor server-side application project. Select **Blazor Web App** from the template and click the Next button.
+   <img src="HTML_to_PDF_Blazor/htmlconversion_images/Blazor-web-app.png" alt="Blazor_step1" width="100%" Height="Auto"/>
 
-   In the project configuration window, name your project and select Create.
-   <img src="HTML_to_PDF_Blazor/htmlconversion_images/blazor_step2.png" alt="Blazor_step2" width="100%" Height="Auto"/>
-   <img src="HTML_to_PDF_Blazor/htmlconversion_images/blazor_step3.png" alt="Blazor_step3" width="100%" Height="Auto"/>
+2. In the project configuration window, name your project and select Create.
+   <img src="HTML_to_PDF_Blazor/htmlconversion_images/Blazor-Server-App.png" alt="Blazor_step2" width="100%" Height="Auto"/>
 
-2. Install the [Syncfusion.HtmlToPdfConverter.Net.Windows](https://www.nuget.org/packages/Syncfusion.HtmlToPdfConverter.Net.Windows/) NuGet package as a reference to your Blazor Server application from [NuGet.org](https://www.nuget.org/).
-   <img src="HTML_to_PDF_Blazor/htmlconversion_images/blazor_step_nuget.png" alt="Blazor_step_nuget" width="100%" Height="Auto"/>
+3. To create a PDF document in a Blazor Server app, install the [Syncfusion.PDF.Net.Core](https://www.nuget.org/packages/Syncfusion.pdf.Net.Core) package into the Blazor project.
+   <img src="HTML_to_PDF_Blazor/htmlconversion_images/Blazor_server_NuGet.png" alt="Blazor_step_nuget" width="100%" Height="Auto"/>
 
-3. Create a new class file named ExportService under Data folder and include the following namespaces in the file.
+Step 4: Create a new cs file named **ExportService.cs** under **Data** folder and include the following namespaces in the file.
 
-   ```csharp
-   using Syncfusion.HtmlConverter;
-   using Syncfusion.Pdf;
-   using System.IO;
-   ```
+```csharp
+using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
+using Syncfusion.Pdf.Grid;
+using Syncfusion.Drawing;
+```
 
-4. Add the following code to convert HTML to PDF document in [ExportService](HTML_to_PDF_Blazor/Data/ExportService.cs) class.
+Step 5: The [PdfDocument](https://help.syncfusion.com/cr/document-processing/Syncfusion.Pdf.PdfDocument.html) object represents an entire PDF document that is being created. The [PdfTextElement](https://help.syncfusion.com/cr/document-processing/Syncfusion.Pdf.Graphics.PdfTextElement.html) adds text in a PDF document and provides the layout result of the added text by using the location of the next element that decides to prevent content overlapping. The [PdfGrid](https://help.syncfusion.com/cr/document-processing/Syncfusion.Pdf.Grid.PdfGrid.html) allows table creation by entering data manually or from external data sources. 
 
-   ```csharp
-   public MemoryStream CreatePdf(string url)
-   {
-      //Initialize HTML to PDF converter.
-      HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();      
-      //Convert URL to PDF document.
-      PdfDocument document = htmlConverter.Convert(url);
-      //Create memory stream.
-      MemoryStream stream = new MemoryStream();
-      //Save the document to memory stream.
-      document.Save(stream);
-      return stream;
-   }
-   ```
+Add the following code sample in the `ExportService` class which illustrates how to create a simple PDF document using `PdfTextElement` and `PdfGrid`. 
 
-5. Register your service in the ConfigureServices method available in the Startup.cs class as follows.
+```csharp
+//Export weather data to PDF document.
+public static MemoryStream CreatePdf(WeatherForecast[] forecasts)
+{
+    if (forecasts == null)
+    {
+        throw new ArgumentNullException("Forecast cannot be null");
+    }
+    //Create a new PDF document.
+    using (PdfDocument pdfDocument = new PdfDocument())
+    {
+        int paragraphAfterSpacing = 8;
+        int cellMargin = 8;
+        //Add page to the PDF document.
+        PdfPage page = pdfDocument.Pages.Add();
+        //Create a new font.
+        PdfStandardFont font = new PdfStandardFont(PdfFontFamily.TimesRoman, 16);
 
-   ```csharp
-   /// <summary>
-   /// Register your ExportService 
-   /// </summary>
-   public void ConfigureServices(IServiceCollection services)
-   {
-      services.AddRazorPages();
-      services.AddServerSideBlazor();
-      services.AddSingleton<WeatherForecastService>();
-      services.AddSingleton<ExportService>();
-   }
-   ```
+        //Create a text element to draw a text in PDF page.
+        PdfTextElement title = new PdfTextElement("Weather Forecast", font, PdfBrushes.Black);
+        PdfLayoutResult result = title.Draw(page, new PointF(0, 0));
+        PdfStandardFont contentFont = new PdfStandardFont(PdfFontFamily.TimesRoman, 12);
+        PdfTextElement content = new PdfTextElement("This component demonstrates fetching data from a service and Exporting the data to PDF document using Syncfusion .NET PDF library.", contentFont, PdfBrushes.Black);
+        PdfLayoutFormat format = new PdfLayoutFormat();
+        format.Layout = PdfLayoutType.Paginate;
+        //Draw a text to the PDF document.
+        result = content.Draw(page, new RectangleF(0, result.Bounds.Bottom + paragraphAfterSpacing, page.GetClientSize().Width, page.GetClientSize().Height), format);
 
-6. Inject ExportService into FetchData.razor using the following code.
+        //Create a PdfGrid.
+        PdfGrid pdfGrid = new PdfGrid();
+        pdfGrid.Style.CellPadding.Left = cellMargin;
+        pdfGrid.Style.CellPadding.Right = cellMargin;
+        //Applying built-in style to the PDF grid.
+        pdfGrid.ApplyBuiltinStyle(PdfGridBuiltinStyle.GridTable4Accent1);
 
-   ```csharp
-   @inject ExportService exportService
-   @inject Microsoft.JSInterop.IJSRuntime JS
-   @inject NavigationManager NavigationManager
-   @using  System.IO;
-   ```
+        //Assign data source.
+        pdfGrid.DataSource = forecasts;
+        pdfGrid.Style.Font = contentFont;
+        //Draw PDF grid into the PDF page.
+        pdfGrid.Draw(page, new Syncfusion.Drawing.PointF(0, result.Bounds.Bottom + paragraphAfterSpacing));
 
-7. Create a button in the FetchData.razor using the following code.
+        using (MemoryStream stream = new MemoryStream())
+        {
+            //Saving the PDF document into the stream.
+            pdfDocument.Save(stream);
+            //Closing the PDF document.
+            pdfDocument.Close(true);
+            return stream;                
+        }
+    }
+}
+```
 
-   ```csharp
-   <button class="btn btn-primary" @onclick="@ExportToPdf">Export to PDF</button>
-   ```
+Step 6: Register the service in the `Program.cs` class as follows.
 
-8. Add the ExportToPdf method in FetchData.razor page to call the export service.
+```csharp
+services.AddRazorPages();
+services.AddServerSideBlazor();
+services.AddSingleton<WeatherForecastService>();
+services.AddSingleton<ExportService>();
+```
 
-   ```csharp
-   @code {
-   private string currentUrl;
-   /// <summary>
-   /// Get the current URL
-   /// </summary>
-   protected override void OnInitialized()
-   {
-      currentUrl = NavigationManager.Uri;
-   }
-   }
-   @functions
-   {
-      /// <summary>
-      /// Create and download the PDF document
-      /// </summary>
-      protected async Task ExportToPdf()
-      {
-         ExportService exportService = new ExportService();
-         using (MemoryStream excelStream = exportService.CreatePdf(currentUrl))
-         {
-            await JS.SaveAs("HTML-to-PDF.pdf", excelStream.ToArray());
-         }
-      }
-   }
-   ```
+Step 7: Inject `ExportService` into `Weather.razor` using the following code.
 
-9. Create a class file with FileUtil name and add the following code to invoke the JavaScript action to download the file in the browser.
+```csharp
+@inject ExportToFileService exportService
+@inject Microsoft.JSInterop.IJSRuntime JS
+@using  System.IO;
 
-   ```csharp
-   public static class FileUtil
-   {
-       public static ValueTask<object> SaveAs(this IJSRuntime js, string filename, byte[] data)
+```
+
+Create a button in the `Weather.razor` using the following code.
+
+```csharp
+<button class="btn btn-primary" @onclick="@ExportToPdf">Export to PDF</button>
+```
+
+Add the `ExportToPdf` method in `Weather.razor` page to call the export service.
+
+```csharp
+@functions
+{
+    protected async Task ExportToPdf()
+    {
+        using (MemoryStream excelStream = ExportService.CreatePdf(forecasts))
+        {
+            await JS.SaveAs("Sample.pdf", excelStream.ToArray());
+        }
+    }
+}
+```
+
+Step 8: Include the `FileUtil` class within the `ExportService.cs` file to enable file-related operations as part of the export functionality.
+
+```csharp
+public static class FileUtil
+{
+    public static ValueTask<object> SaveAs(this IJSRuntime js, string filename, byte[] data)
        => js.InvokeAsync<object>(
            "saveAsFile",
            filename,
            Convert.ToBase64String(data));
-   }
-   ```
+}
+```
 
-10. Add the following JavaScript function in the _Host.cshtml available under the Pages folder.
+Step 9: Add the following JavaScript function in the `App.razor` available under the `Components` folder.
 
-    ```csharp
-    <script type="text/javascript">
-        function saveAsFile(filename, bytesBase64) {
+```csharp
+<script type="text/javascript">
+    function saveAsFile(filename, bytesBase64) {
             if (navigator.msSaveBlob) {
                 //Download document in Edge browser
                 var data = window.atob(bytesBase64);
@@ -129,18 +149,28 @@ The Syncfusion&reg; HTML to PDF converter is a .NET library used to convert HTML
                 navigator.msSaveBlob(blob, filename);
             }
             else {
-                var link = document.createElement('a');
-                link.download = filename;
-                link.href = "data:application/octet-stream;base64," + bytesBase64;
-                document.body.appendChild(link); // Needed for Firefox
-                link.click();
-                document.body.removeChild(link);
-            }
+        var link = document.createElement('a');
+        link.download = filename;
+        link.href = "data:application/octet-stream;base64," + bytesBase64;
+        document.body.appendChild(link); // Needed for Firefox
+        link.click();
+        document.body.removeChild(link);
+    }
         }
-    </script>
-    ```
+</script>
 
-    By executing the program, you will get the following output in the browser.
-    <img src="HTML_to_PDF_Blazor/htmlconversion_images/blazor_step4.png" alt="Blazor_step4" width="100%" Height="Auto"/>
-    Click the Export to PDF button, and you will get the PDF document with the following output.
-    <img src="HTML_to_PDF_Blazor/htmlconversion_images/HtmlBlazorOutput.png" alt="HTMLTOPDF" width="100%" Height="Auto"/>
+```
+
+Step 10: Build the project.
+
+Click on Build > Build Solution or press Ctrl + Shift + B to build the project.
+
+Step 11: Run the project.
+
+Click the Start button (green arrow) or press F5 to run the app.
+
+The following output appears in the browser after executing the program.
+<img src="HTML_to_PDF_Blazor/htmlconversion_images/blazor_step4.png" alt="Blazor_step4" width="100%" Height="Auto"/>
+
+Click the `Export to PDF` button to obtain the PDF document with the following output.
+<img src="HTML_to_PDF_Blazor/htmlconversion_images/HtmlBlazorOutput.png" alt="HTMLTOPDF" width="100%" Height="Auto"/>
