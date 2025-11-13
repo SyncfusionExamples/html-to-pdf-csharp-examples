@@ -1,0 +1,19 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clusterhtml-deployment
+spec:
+  replicas: 2  # Adjust the number of replicas if needed
+  selector:
+    matchLabels:
+      app: clusterhtml-api
+  template:
+    metadata:
+      labels:
+        app: clusterhtml-api
+    spec:
+      containers:
+      - name: clusterhtml-api
+        image: karmegamsf3701120/htmltopdfconversion:v4
+        ports:
+        - containerPort: 8080
