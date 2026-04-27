@@ -157,4 +157,4 @@ The following output appears in the browser after executing the program.
 <img src="HTML_to_PDF_Blazor/htmlconversion_images/blazor_step4.png" alt="Blazor_step4" width="100%" Height="Auto"/>
 
 Click the `Export to PDF` button to obtain the PDF document with the following output.
-<img src="HTML_to_PDF_Blazor/htmlconversion_images/HtmlBlazorOutput.png" alt="HTMLTOPDF" width="100%" Height="Auto"/>
+<img src="HTML_to_PDF_Blazor/htmlconversion_images/Output.png" alt="HTMLTOPDF" width="100%" Height="Auto"/>
