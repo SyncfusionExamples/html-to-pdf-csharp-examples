@@ -38,19 +38,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Compression.Base, Version=20.3460.0.58, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Compression.Base.20.3.0.58\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
+    <Reference Include="Syncfusion.Compression.Base, Version=33.2462.10.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Compression.Base.33.2.10\lib\net462\Syncfusion.Compression.Base.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Syncfusion.HtmlConverter.Base, Version=20.3460.0.58, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.HtmlToPdfConverter.WPF.20.3.0.58\lib\net46\Syncfusion.HtmlConverter.Base.dll</HintPath>
+    <Reference Include="Syncfusion.HtmlConverter.Base, Version=33.2462.10.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.HtmlToPdfConverter.WPF.33.2.10\lib\net462\Syncfusion.HtmlConverter.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Licensing, Version=20.3460.0.58, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Licensing.20.3.0.58\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    <Reference Include="Syncfusion.Licensing, Version=33.2462.10.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.33.2.10\lib\net462\Syncfusion.Licensing.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Syncfusion.Pdf.Base, Version=20.3460.0.58, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Pdf.Wpf.20.3.0.58\lib\net46\Syncfusion.Pdf.Base.dll</HintPath>
+    <Reference Include="Syncfusion.Pdf.Base, Version=33.2462.10.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Pdf.Wpf.33.2.10\lib\net462\Syncfusion.Pdf.Base.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -114,11 +117,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Syncfusion.HtmlToPdfConverter.WPF.20.3.0.58\build\net46\Syncfusion.HtmlToPdfConverter.WPF.targets" Condition="Exists('..\packages\Syncfusion.HtmlToPdfConverter.WPF.20.3.0.58\build\net46\Syncfusion.HtmlToPdfConverter.WPF.targets')" />
+  <Import Project="..\packages\Syncfusion.HtmlToPdfConverter.WPF.33.2.10\build\net462\Syncfusion.HtmlToPdfConverter.WPF.targets" Condition="Exists('..\packages\Syncfusion.HtmlToPdfConverter.WPF.33.2.10\build\net462\Syncfusion.HtmlToPdfConverter.WPF.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Syncfusion.HtmlToPdfConverter.WPF.20.3.0.58\build\net46\Syncfusion.HtmlToPdfConverter.WPF.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Syncfusion.HtmlToPdfConverter.WPF.20.3.0.58\build\net46\Syncfusion.HtmlToPdfConverter.WPF.targets'))" />
+    <Error Condition="!Exists('..\packages\Syncfusion.HtmlToPdfConverter.WPF.33.2.10\build\net462\Syncfusion.HtmlToPdfConverter.WPF.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Syncfusion.HtmlToPdfConverter.WPF.33.2.10\build\net462\Syncfusion.HtmlToPdfConverter.WPF.targets'))" />
   </Target>
 </Project>

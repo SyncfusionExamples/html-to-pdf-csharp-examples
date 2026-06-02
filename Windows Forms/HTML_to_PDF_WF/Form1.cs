@@ -37,7 +37,7 @@ namespace HTML_to_PDF_WF
             PdfDocument document = htmlConverter.Convert("https://www.syncfusion.com");
 
             //Create file stream
-            FileStream stream = new FileStream("HTML-to-PDF.pdf", FileMode.CreateNew);
+            FileStream stream = new FileStream("HTML-to-PDF.pdf", FileMode.Create, FileAccess.Write);
 
             //Save the document into stream
             document.Save(stream);
