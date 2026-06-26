@@ -1,6 +1,6 @@
 # Convert HTML to PDF file in Linux using C#
 
-The Syncfusion&reg; [HTML to PDF converter](https://www.syncfusion.com/document-sdk/net-pdf-library/html-to-pdf) is a .NET library that converts HTML or web pages to PDF document in Linux.
+The [HTML to PDF converter](https://www.syncfusion.com/document-sdk/net-pdf-library/html-to-pdf) is a .NET library that converts HTML or web pages to PDF document in Linux.
 ## Pre-requisites
 
  The following Linux dependencies should be installed where the conversion takes place. 

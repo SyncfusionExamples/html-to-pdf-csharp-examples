@@ -1,5 +1,5 @@
 # HTML to PDF examples using C#
-The Syncfusion&reg; [HTML to PDF converter](https://www.syncfusion.com/document-sdk/net-pdf-library/html-to-pdf) is a .NET library for converting webpages, SVG, MHTML, and HTML to PDF using C#. It is reliable and accurate. The result preserves all graphics, images, text, fonts, and the layout of the original HTML document or webpage. This repository contains examples of HTML to PDF conversion using C# in different platforms.
+The [HTML to PDF converter](https://www.syncfusion.com/document-sdk/net-pdf-library/html-to-pdf) is a .NET library for converting webpages, SVG, MHTML, and HTML to PDF using C#. It is reliable and accurate. The result preserves all graphics, images, text, fonts, and the layout of the original HTML document or webpage. This repository contains examples of HTML to PDF conversion using C# in different platforms.
 
 
 Platform name | Description
