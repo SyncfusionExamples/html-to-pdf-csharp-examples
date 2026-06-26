@@ -1,6 +1,6 @@
 # Convert HTML to PDF file in Linux using C#
 
-The Syncfusion&reg; HTML to PDF converter is a .NET library that converts HTML or web pages to PDF document in Linux.
+The [HTML to PDF converter](https://www.syncfusion.com/document-sdk/net-pdf-library/html-to-pdf) is a .NET library that converts HTML or web pages to PDF document in Linux.
 ## Pre-requisites
 
  The following Linux dependencies should be installed where the conversion takes place. 
@@ -47,32 +47,29 @@ The Syncfusion&reg; HTML to PDF converter is a .NET library that converts HTML o
 
 4.  Add code samples in Program.cs file.
 
-      ```csharp
+   ```csharp
 
-            //Initialize HTML to PDF converter. 
-            HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
-            BlinkConverterSettings settings = new BlinkConverterSettings();
-            //Set command line arguments to run without the sandbox. 
-            settings.CommandLineArguments.Add("--no-sandbox");
-            settings.CommandLineArguments.Add("--disable-setuid-sandbox");
-            //Assign Blink settings to the HTML converter.
-            htmlConverter.ConverterSettings = settings;
-            //Convert URL to PDF.
-            PdfDocument document = htmlConverter.Convert("https://www.syncfusion.com");
-            FileStream fileStream = new FileStream("HTML-to-PDF.pdf", FileMode.CreateNew, FileAccess.ReadWrite);
-            //Save and close a PDF document. 
-            document.Save(fileStream);
-            document.Close(true);
+      //Initialize HTML to PDF converter. 
+      HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter();
+      BlinkConverterSettings settings = new BlinkConverterSettings();
+      //Set command line arguments to run without the sandbox. 
+      settings.CommandLineArguments.Add("--no-sandbox");
+      settings.CommandLineArguments.Add("--disable-setuid-sandbox");
+      //Assign Blink settings to the HTML converter.
+      htmlConverter.ConverterSettings = settings;
+      //Convert URL to PDF.
+      PdfDocument document = htmlConverter.Convert("https://www.syncfusion.com");
+      FileStream fileStream = new FileStream("HTML-to-PDF.pdf", FileMode.CreateNew, FileAccess.ReadWrite);
+      //Save and close a PDF document. 
+      document.Save(fileStream);
+      document.Close(true);
 
-      ```
+   ```
 
 5. Execute the following command to restore the NuGet packages.
 
     ```csharp
-
-
    dotnet restore
-
    ```
 
     <img src="HTML_to_PDF_images/LinuxStep3.png" alt="Convert HTMLToPDF Linux Step3" width="100%" Height="Auto"/>
