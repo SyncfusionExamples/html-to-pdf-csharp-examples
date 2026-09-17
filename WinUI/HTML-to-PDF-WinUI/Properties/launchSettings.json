@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "HTML-to-PDF-WinUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "HTML-to-PDF-WinUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
